@@ -8,7 +8,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+
+    <title>Portfolio - Web Developer - Md. Kamrul Islam</title>
+    <link rel="apple-touch-icon" type="image/png" href="<?php echo base_url();?>/frontendasset/img/admin-favicon.png" />
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url();?>/frontendasset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

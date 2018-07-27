@@ -48,6 +48,32 @@ class Admin_model extends CI_model {
        $query_result=$this->db->get();       
        return $query_result->result();      
    }
+   //Single client for edit
+   public function edit_client($client_id){
+    $this->db->select('*');
+    $this->db->from('clients');
+    $this->db->where('client_id',$client_id);
+    $query_result=$this->db->get();
+    return $query_result->row();
+   }
+   //Update Client info
+   public function update_client_info(){
+    $data=array();
+    $client_id= $this->input->post('client_id', TRUE);
+    $data['client_name']= $this->input->post('client_name', TRUE);
+    $data['client_email']= $this->input->post('client_email', TRUE);
+    $data['client_contact']= $this->input->post('client_contact', TRUE);
+    $data['comments']= $this->input->post('comments', TRUE);
+    $this->db->where('client_id',$client_id);
+    $this->db->update('clients',$data);  
+   }
+
+   //Delete Client
+   public function delete_client($client_id){
+    $this->db->where('client_id',$client_id);
+    $this->db->delete('clients');
+   }
+
    //All published category for portfolio form
    public function all_published_category(){
         $this->db->select('*');
@@ -57,7 +83,7 @@ class Admin_model extends CI_model {
         return $query_result->result(); 
     }
 
-//Mange client
+//Manage client
     public function all_client_info(){
         $this->db->select('*');
        $this->db->from('clients');       

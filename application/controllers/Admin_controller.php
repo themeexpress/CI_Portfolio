@@ -110,30 +110,7 @@ class Admin_controller extends CI_Controller {
         $this->session->set_userdata($sdata);
         redirect('add-portfolio');
     }   
-    //manage product
-    public function manage_product(){        
-        $data=array();
-        $data['products_info']=$this->Super_admin_model->show_all_products();
-        $data['admin_main_contents']=$this->load->view('admin/pages/manage_products.php',$data,true);
-        $this->load->view('admin/adminmaster',$data); 
-    }
-    //unpublished product
-    public function unpublished_product($product_id){
-        $this->Super_admin_model->unpublished_product($product_id);
-        redirect('manage-product'); 
-
-    }
-    //published a product
-    public function published_product($product_id){
-        $this->Super_admin_model->published_product($product_id);
-        redirect('manage-product'); 
-    }
-    //delete product
-    public function delete_product($product_id){       
-      $this->Super_admin_model->delete_product_info($product_id);
-      redirect('manage-product');
-    }
-    
+   
     //Manage Portfolio
     public function manage_portfolio(){
         $data=array();
@@ -186,9 +163,63 @@ class Admin_controller extends CI_Controller {
         $data['main_content']=$this->load->view('admin/partials/manage_clients.php',$data,TRUE);
         $this->load->view('admin/master',$data);
     }
-    // public function join_test(){
-    //     $this->admin_model->myjoint();  
-    // }
+    //Edit Client
 
+    public function edit_client($client_id){
+        $data=array();
+        $data['single_client_info']=$this->admin_model->edit_client($client_id);
+        $data['sidebar_menu']=$this->load->view('admin/partials/sidebar_menu.php','',TRUE);
+        $data['main_content']=$this->load->view('admin/partials/edit_client.php',$data,TRUE);
+        $this->load->view('admin/master',$data);
+
+    }
+
+    //update Client
+    public function update_client(){
+        $this->admin_model->update_client_info();
+        $sdata=array();
+        $sdata['message']='Client Updated Successfully!!';
+        $this->session->set_userdata($sdata);
+        redirect('manage-clients');
+    }
+
+    //Delele Client
+    public function delete_client($client_id){
+        $this->admin_model->delete_client($client_id);
+        $sdata=array();
+        $sdata['message']='Client Updated Successfully!!';
+        $this->session->set_userdata($sdata);
+        redirect('manage-clients');
+
+
+    }
+
+    /*
+
+ //manage product
+    public function manage_product(){        
+        $data=array();
+        $data['products_info']=$this->Super_admin_model->show_all_products();
+        $data['admin_main_contents']=$this->load->view('admin/pages/manage_products.php',$data,true);
+        $this->load->view('admin/adminmaster',$data); 
+    }
+    //unpublished product
+    public function unpublished_product($product_id){
+        $this->Super_admin_model->unpublished_product($product_id);
+        redirect('manage-product'); 
+
+    }
+    //published a product
+    public function published_product($product_id){
+        $this->Super_admin_model->published_product($product_id);
+        redirect('manage-product'); 
+    }
+    //delete product
+    public function delete_product($product_id){       
+      $this->Super_admin_model->delete_product_info($product_id);
+      redirect('manage-product');
+    }
+    
+    */
 
 }

@@ -28,13 +28,16 @@ $route['manage-portfolio']='Admin_controller/manage_portfolio';
 $route['add-client']='Admin_controller/add_client';
 $route['save-client']='Admin_controller/save_client';
 $route['manage-clients']='Admin_controller/manage_clients';
+$route['edit-client/(.+)']='Admin_controller/edit_client/$1';
+$route['update-client']='Admin_controller/update_client';
+$route['delete-client/(.+)']='Admin_controller/delete_client/$1';
 
 //category Section
 $route['add-category']='Admin_controller/add_category';
 $route['save-category']='Admin_controller/save_category';
 $route['manage-categroy']='Admin_controller/manage_category';
 
-//$route['join_test']='Admin_controller/join_test';
+
 
 
 
