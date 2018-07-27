@@ -140,7 +140,43 @@ class Admin_controller extends CI_Controller {
         $this->load->view('admin/master',$data);
     }
 
-    //Client section
+    //Edit Category
+    public function edit_category($category_id){
+        $data=array();
+        $data['single_category_info']=$this->admin_model->edit_category($category_id);
+        $data['sidebar_menu']=$this->load->view('admin/partials/sidebar_menu.php','',TRUE);
+        $data['main_content']=$this->load->view('admin/partials/edit_category.php',$data,TRUE);
+        $this->load->view('admin/master',$data);
+    }
+    //Update Category
+    public function update_category(){
+        $this->admin_model->update_category_info();
+        $sdata=array();
+        $sdata['message']='Category Updated Successfully!!';
+        $this->session->set_userdata($sdata);
+        redirect('manage-categroy');
+    }
+
+    //Delete Category
+
+    public function delete_category($category_id){
+         $this->admin_model->delete_category($category_id);
+        $sdata=array();
+        $sdata['message']='Category Deleted Successfully!!';
+        $this->session->set_userdata($sdata);
+        redirect('manage-categroy');
+
+
+    }
+
+
+
+
+    /*
+    -------------------
+   | Client section
+   --------------------
+   */
     public function add_client(){
         $data=array();
         $data['sidebar_menu']=$this->load->view('admin/partials/sidebar_menu.php','',TRUE);
@@ -182,7 +218,6 @@ class Admin_controller extends CI_Controller {
         $this->session->set_userdata($sdata);
         redirect('manage-clients');
     }
-
     //Delele Client
     public function delete_client($client_id){
         $this->admin_model->delete_client($client_id);
@@ -190,8 +225,6 @@ class Admin_controller extends CI_Controller {
         $sdata['message']='Client Updated Successfully!!';
         $this->session->set_userdata($sdata);
         redirect('manage-clients');
-
-
     }
 
     /*

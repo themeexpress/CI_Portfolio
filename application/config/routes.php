@@ -36,13 +36,12 @@ $route['delete-client/(.+)']='Admin_controller/delete_client/$1';
 $route['add-category']='Admin_controller/add_category';
 $route['save-category']='Admin_controller/save_category';
 $route['manage-categroy']='Admin_controller/manage_category';
+$route['edit-category/(.+)']='Admin_controller/edit_category/$1';
+$route['update-category']='Admin_controller/update_category';
+$route['delete-category/(.+)']='Admin_controller/delete_category/$1';
 
 
-
-
-
-
-
+//Default Route
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

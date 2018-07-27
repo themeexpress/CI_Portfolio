@@ -31,6 +31,41 @@ class Admin_model extends CI_model {
        $query_result=$this->db->get();
        return $query_result->result();		
    }
+
+   //Edit Category
+   public function edit_category($category_id){
+    $this->db->select('*');
+    $this->db->from('category');
+    $this->db->where('category_id',$category_id);    
+    $query_result=$this->db->get();
+    return $query_result->row();
+   }
+
+   //Update Category
+   public function update_category_info(){
+    $data = array();
+    $category_id=$this->input->post('category_id',TRUE);
+    $data['category_name']=$this->input->post('category_name',TRUE);
+    $data['category_description']=$this->input->post('category_description',TRUE);
+    $data['publication_status']=$this->input->post('publication_status',TRUE);
+    $this->db->where('category_id',$category_id);
+    $this->db->update('category',$data);
+   }
+
+   //Delete Category
+   public function delete_category($category_id){
+    $this->db->where('category_id',$category_id);
+    $this->db->delete('category');
+   }
+
+
+
+/*
+-------------------
+| Client Section |
+-------------------
+*/
+
    //save client
    public function save_client_info(){
        $data=array();
