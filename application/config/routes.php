@@ -40,6 +40,9 @@ $route['edit-category/(.+)']='Admin_controller/edit_category/$1';
 $route['update-category']='Admin_controller/update_category';
 $route['delete-category/(.+)']='Admin_controller/delete_category/$1';
 
+/*Profile Section*/
+$route['profile']='Admin_controller/show_profile';
+
 
 //Default Route
 $route['default_controller'] = 'welcome';

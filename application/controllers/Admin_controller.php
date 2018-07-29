@@ -227,6 +227,18 @@ class Admin_controller extends CI_Controller {
         redirect('manage-clients');
     }
 
+
+    /*Profile Section*/
+    public function show_profile(){
+        $data=array();
+        $data['sidebar_menu']=$this->load->view('admin/partials/sidebar_menu.php','',TRUE);
+        $data['main_content']=$this->load->view('admin/partials/profile.php','',TRUE);
+        $this->load->view('admin/master',$data);
+    }
+
+
+
+
     /*
 
  //manage product
