@@ -142,6 +142,24 @@ class Admin_model extends CI_model {
         return $query_result->result(); 
         
     }
+
+/*
+-----------------
+| Profile Section |
+------------------
+*/
+
+public function update_profile_info(){
+  
+
+}
+
+
+
+
+
+
+
 //     //Test joint
 //    public function myjoint(){
 //        $this->db->select('*');

@@ -1,8 +1,6 @@
  <section class="content">
-
       <div class="row">
         <div class="col-md-3">
-
           <!-- Profile Image -->
           <div class="box box-primary">
             <div class="box-body box-profile">
@@ -20,8 +18,8 @@
                   <b>Completed Projects</b> <a class="pull-right">13,287</a>
                 </li>
               </ul>
+<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal"><b>Edit Profile</b></button>
 
-              <a href="<?php echo base_url();?>edit-profile" class="btn btn-primary btn-block"><b>Edit Profile</b></a>
             </div>
             <!-- /.box-body -->
           </div>
@@ -175,3 +173,89 @@
       <!-- /.row -->
 
     </section>
+
+
+  <!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" method="POST" action="<?php echo base_url()?>edit_profile" enctype='multipart/form-data'>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label" for="File">Profile Picture</label>
+                  <div class="col-sm-10">
+                    <input type="file" name="portfolio_image">
+                  </div>
+                </div>
+               
+                  <div class="form-group">
+                    <label for="Designation" class="col-sm-2 control-label">Designation</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="designation" placeholder="Designation">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="Profession" class="col-sm-2 control-label">Profession</label>
+
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="tag_name" placeholder="Profession">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="birthdate" class="col-sm-2 control-label">Birth Date</label>
+
+                    <div class="col-sm-10">
+                      <input type="date" class="form-control" name="birthdate" placeholder="Birth Date">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="Education" class="col-sm-2 control-label">Education</label>
+
+                    <div class="col-sm-10">
+                      <textarea class="form-control" name="education" placeholder="Education"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="Location" class="col-sm-2 control-label">Location</label>
+
+                    <div class="col-sm-10">
+                      <textarea class="form-control" name="location" placeholder="Location"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="Skills" class="col-sm-2 control-label">Skills</label>
+
+                    <div class="col-sm-10">
+                  <input type="text" class="form-control" name="skills" placeholder="Skills">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                  </div>
+                </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>

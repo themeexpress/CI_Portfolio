@@ -42,6 +42,7 @@ $route['delete-category/(.+)']='Admin_controller/delete_category/$1';
 
 /*Profile Section*/
 $route['profile']='Admin_controller/show_profile';
+$route['edit_profile']='Admin_controller/update_profile';
 
 
 //Default Route

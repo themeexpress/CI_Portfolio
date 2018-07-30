@@ -165,8 +165,6 @@ class Admin_controller extends CI_Controller {
         $sdata['message']='Category Deleted Successfully!!';
         $this->session->set_userdata($sdata);
         redirect('manage-categroy');
-
-
     }
 
 
@@ -227,14 +225,27 @@ class Admin_controller extends CI_Controller {
         redirect('manage-clients');
     }
 
-
-    /*Profile Section*/
+    /*
+    ------------------
+    | Profile Section |
+    ------------------
+    */
     public function show_profile(){
         $data=array();
         $data['sidebar_menu']=$this->load->view('admin/partials/sidebar_menu.php','',TRUE);
         $data['main_content']=$this->load->view('admin/partials/profile.php','',TRUE);
         $this->load->view('admin/master',$data);
     }
+
+    public function update_profile(){
+        $data=array();
+        $data['update_profile_info']=$this->admin_model->update_profile_info();
+        $data['sidebar_menu']=$this->load->view('admin/partials/sidebar_menu.php','',TRUE);
+        $data['main_content']=$this->load->view('admin/partials/profile.php','',TRUE);
+        $this->load->view('admin/master',$data);
+
+    }
+
 
 
 
