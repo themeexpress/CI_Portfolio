@@ -62,6 +62,16 @@
             <li><a href="<?php echo base_url()?>manage-clients"><i class="fa fa-circle-o"></i> Manage Clients</a></li>
             
           </ul>
+          
+        </li>
+        <li class="active treeview">
+          <a href="<?php echo base_url()?>utility">
+            <i class="fa fa-files-o"></i>
+            <span>Home Utility</span>       
+                       
+          </ul>         
+          </a>
+          
         </li>
        
       </ul>
