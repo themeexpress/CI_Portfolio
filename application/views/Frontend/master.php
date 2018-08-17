@@ -131,7 +131,7 @@
                   <i class="fa fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img class="img-fluid" src="<?php echo  $v_portfolio->portfolio_image;?>" alt="">
+              <img style="height:400px;width:420px;" class="img-fluid" src="<?php echo  $v_portfolio->portfolio_image;?>" alt="">
             </a>
             <div class="portfolio-caption">
               <h4><?php echo  $v_portfolio->portfolio_name;?></h4>

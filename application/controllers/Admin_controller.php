@@ -119,6 +119,20 @@ class Admin_controller extends CI_Controller {
         $data['main_content']=$this->load->view('admin/partials/manage_portfolio.php',$data,TRUE);
         $this->load->view('admin/master',$data);
     }
+    //Delete Portfolio
+    public function delete_portfolio($portfolio_id){
+        $this->admin_model->delete_portfolio_info($portfolio_id);
+        $sdata=array();
+        $sdata['message']='Portfolio Deleted Successfully!!';
+        $this->session->set_userdata($sdata);
+        redirect('manage-portfolio');
+
+    }
+    
+
+
+
+
     //category section
     public function add_category(){ 
         $data=array();              
@@ -243,39 +257,9 @@ class Admin_controller extends CI_Controller {
         $data['sidebar_menu']=$this->load->view('admin/partials/sidebar_menu.php','',TRUE);
         $data['main_content']=$this->load->view('admin/partials/profile.php','',TRUE);
         $this->load->view('admin/master',$data);
-
-    }
-
-
-
-
-
-    /*
-
- //manage product
-    public function manage_product(){        
-        $data=array();
-        $data['products_info']=$this->Super_admin_model->show_all_products();
-        $data['admin_main_contents']=$this->load->view('admin/pages/manage_products.php',$data,true);
-        $this->load->view('admin/adminmaster',$data); 
-    }
-    //unpublished product
-    public function unpublished_product($product_id){
-        $this->Super_admin_model->unpublished_product($product_id);
-        redirect('manage-product'); 
-
-    }
-    //published a product
-    public function published_product($product_id){
-        $this->Super_admin_model->published_product($product_id);
-        redirect('manage-product'); 
-    }
-    //delete product
-    public function delete_product($product_id){       
-      $this->Super_admin_model->delete_product_info($product_id);
-      redirect('manage-product');
     }
     
-    */
 
+
+ 
 }

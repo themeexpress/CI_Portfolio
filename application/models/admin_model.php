@@ -149,9 +149,14 @@ class Admin_model extends CI_model {
 ------------------
 */
 
-public function update_profile_info(){
+//public function update_profile_info(){
   
 
+//}
+
+public function delete_portfolio_info($portfolio_id){
+    $this->db->where('portfolio_id',$portfolio_id);
+    $this->db->delete('portfolio_items');
 }
 
 

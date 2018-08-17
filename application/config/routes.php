@@ -23,6 +23,8 @@ $route['add-portfolio']='Admin_controller/add_portfolio';
 $route['save-portfolio']='Admin_controller/save_portfolio';
 
 $route['manage-portfolio']='Admin_controller/manage_portfolio';
+//delete portfolio
+$route['delete-portfolio/(.+)']='Admin_controller/delete_portfolio/$1';
 
 //Client section
 $route['add-client']='Admin_controller/add_client';

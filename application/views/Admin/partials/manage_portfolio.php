@@ -31,7 +31,7 @@
                   <td><a href="<?php echo $v_portfolio->github_link;?>">Github Link</a> </td>
                   <td><?php echo $v_portfolio->duration;?> Days</td>
                   <td><?php echo $v_portfolio->publication_status;?></td>
-                  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>                 
+                  <td><a href="<?php echo base_url();?>update-portfolio/<?php echo $v_portfolio->portfolio_id; ?>">Edit</a> | <a href="<?php echo base_url();?>delete-portfolio/<?php echo $v_portfolio->portfolio_id; ?>">Delete</a></td>                 
                 </tr>
                 <?php } ?>                
                 </tbody>               
